@@ -25,9 +25,15 @@ pnpm-debug.log.*
 *~
 .DS_Store
 
+# macOS
+._*
+.AppleDouble/
+.LSOverride/
+
 # Testing
 coverage/
 .nyc_output/
 
 # OS
 Thumbs.db
+
