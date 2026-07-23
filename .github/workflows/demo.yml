@@ -16,6 +16,10 @@ jobs:
           node-version: 24
       - name: Install dependencies
         run: npm ci
+      - name: Build website
+        run: npm run build
+      - Publish JS filename
+        run: find dist/assets/*.js -type f -execdir echo '{}' ';'
       - name: Test code
         run: npm run test
   build:
@@ -33,7 +37,7 @@ jobs:
       - name: Build website
         run: npm run build
       - name: Upload build artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: dist-files
           path: |
